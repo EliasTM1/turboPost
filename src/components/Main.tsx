@@ -1,16 +1,16 @@
-import FormAddPost from "./FormAddPost";
 import Posts from "./Posts";
+import FormAddPost from "./FormAddPost";
 
-export type MainProps = {
-	posts: any;
-	onAddPost: any;
-};
+// export type MainProps = {
+// 	posts: any;
+// 	onAddPost: any;
+// };
 
-export default function Main({ posts, onAddPost }: MainProps) {
+export default function Main() {
 	return (
 		<main>
-			{/* <FormAddPost onAddPost={onAddPost} />
-			<Posts posts={posts} /> */}
+			<FormAddPost />
+			<Posts />
 		</main>
 	);
 }

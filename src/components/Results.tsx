@@ -1,11 +1,8 @@
-import { Post } from "../types"
+import { useContext } from "react";
+import { ContextType } from "../types";
+import { PostsContext } from "../App";
 
-type ResultsProps = {
-  posts: Post[]
-}
-
-export default function Results({posts}: ResultsProps) {
-  return (
-    <p>🚀 {posts.length} atomic posts found</p>
-  )
+export default function Results() {
+	const { posts } = useContext<ContextType>(PostsContext);
+	return <p>🚀 {posts.length} atomic posts found</p>;
 }

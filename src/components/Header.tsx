@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { PostsContext } from "../App";
 import Results from "./Results";
 import SearchPost from "./SearchPost";
+import { ContextType } from "../types";
 
 // import { Post } from "../types";
 
@@ -15,19 +16,16 @@ import SearchPost from "./SearchPost";
 // };
 
 export default function Header() {
-	const posts = useContext(PostsContext);
+	const { posts, onClearPosts} = useContext<ContextType>(PostsContext);
 	return (
 		<header>
 			<h1>
 				<span>⚛️</span>The Atomic Blog
 			</h1>
 			<div>
-				{/* <Results posts={posts} />
-				<SearchPost
-					searchQuery={searchQuery}
-					setSearchQuery={setSearchQuery}
-				/>
-				<button onClick={onClearPosts}>Clear posts</button> */}
+				<Results posts={posts} />
+				<SearchPost />
+				<button onClick={onClearPosts}>Clear posts</button>
 			</div>
 		</header>
 	);

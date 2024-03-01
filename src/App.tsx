@@ -4,8 +4,9 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Archive from "./components/Archive";
 import Footer from "./components/Footer";
+import { ContextType, Post } from "./types";
 
-export const PostsContext = createContext({});
+export const PostsContext = createContext<ContextType>({} as ContextType);
 
 function App() {
 	const [posts, setPosts] = useState(() =>
@@ -21,10 +22,10 @@ function App() {
 					`${post.title} ${post.body}`
 						.toLowerCase()
 						.includes(searchQuery.toLowerCase())
-			  )
+			)
 			: posts;
 
-	function handleAddPost(post) {
+	function handleAddPost(post: Post) {
 		setPosts((posts) => [post, ...posts]);
 	}
 
@@ -42,10 +43,10 @@ function App() {
 	return (
 		<PostsContext.Provider value={{
 			posts: searchedPosts,
+			searchQuery, 
+			setSearchQuery,
 			onClearPosts: handleClearPosts,
 			onAddPosts: handleAddPost,
-			searchQuery, 
-			setSearchQuery
 			}}>
 			<section>
 				<button
