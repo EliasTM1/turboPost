@@ -1,10 +1,13 @@
 import { Post } from "../types"
+import List from "./List";
 
 export type PostsProps = {
   posts: Post[]
 }
-export default function Posts() {
+export default function Posts({posts}: PostsProps) {
   return (
-    <div>Posts</div>
-  )
+    <section>
+      <List posts={posts} />
+    </section>
+  );
 }

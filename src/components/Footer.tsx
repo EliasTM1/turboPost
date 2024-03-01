@@ -1,6 +1,6 @@
 
 export default function Footer() {
   return (
-    <div>Footer</div>
+    <footer>&copy; by The Atomic Blog ✌️</footer>
   )
 }

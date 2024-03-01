@@ -1,11 +1,11 @@
 import { Post } from "../types"
 
 type ResultsProps = {
-  posts: Post
+  posts: Post[]
 }
 
-export default function Results({}: ResultsProps) {
+export default function Results({posts}: ResultsProps) {
   return (
-    <div>Results</div>
+    <p>🚀 {posts.length} atomic posts found</p>
   )
 }

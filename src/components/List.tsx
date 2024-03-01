@@ -5,6 +5,13 @@ type ListProps = {
 }
 export default function List({posts}: ListProps) {
   return (
-    <div>List</div>
-  )
+    <ul>
+      {posts.map((post, i) => (
+        <li key={i}>
+          <h3>{post.title}</h3>
+          <p>{post.body}</p>
+        </li>
+      ))}
+    </ul>
+  );
 }

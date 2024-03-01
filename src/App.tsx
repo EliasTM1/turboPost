@@ -5,7 +5,7 @@ import Main from "./components/Main";
 import Archive from "./components/Archive";
 import Footer from "./components/Footer";
 
-const PostsContext = createContext({});
+export const PostsContext = createContext({});
 
 function App() {
 	const [posts, setPosts] = useState(() =>
