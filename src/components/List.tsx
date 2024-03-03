@@ -1,9 +1,10 @@
-import { useContext } from "react";
 import { Post } from "../types";
-import { PostsContext } from "../App";
+import { usePosts } from "../PostContext";
+
 
 export default function List() {
-  const { posts } = useContext(PostsContext);
+  const { posts } = usePosts();
+  // console.log(posts, "POOO")
   return (
     <ul>
       {posts.map((post: Post, i: number) => (
